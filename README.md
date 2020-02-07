@@ -16,3 +16,11 @@ A simple web browser app.
 - UIToolbar
 - UIProgressView
 - Key-Value Observing
+
+## Demonstration
+Small demonstration as to what the application does when on device.
+</br>
+<p align="center">
+<img src="demo/easy-browser.gif" alt="Application demonstration"
+    title="Easy Browser demonstration" width="250" height="500" />
+</p>
