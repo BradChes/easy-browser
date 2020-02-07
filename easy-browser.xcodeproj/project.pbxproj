@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C607D4B623ED952D00B704A5 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C607D4B523ED952D00B704A5 /* TableViewController.swift */; };
 		C690BD8823E82BAF0036B7E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C690BD8723E82BAF0036B7E6 /* AppDelegate.swift */; };
 		C690BD8A23E82BAF0036B7E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C690BD8923E82BAF0036B7E6 /* SceneDelegate.swift */; };
 		C690BD8C23E82BAF0036B7E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C690BD8B23E82BAF0036B7E6 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C607D4B523ED952D00B704A5 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		C690BD8423E82BAF0036B7E6 /* Easy Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C690BD8723E82BAF0036B7E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C690BD8923E82BAF0036B7E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,12 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				C690BD8723E82BAF0036B7E6 /* AppDelegate.swift */,
-				C690BD8923E82BAF0036B7E6 /* SceneDelegate.swift */,
-				C690BD8B23E82BAF0036B7E6 /* ViewController.swift */,
-				C690BD8D23E82BAF0036B7E6 /* Main.storyboard */,
 				C690BD9023E82BB00036B7E6 /* Assets.xcassets */,
-				C690BD9223E82BB00036B7E6 /* LaunchScreen.storyboard */,
 				C690BD9523E82BB00036B7E6 /* Info.plist */,
+				C690BD9223E82BB00036B7E6 /* LaunchScreen.storyboard */,
+				C690BD8D23E82BAF0036B7E6 /* Main.storyboard */,
+				C690BD8923E82BAF0036B7E6 /* SceneDelegate.swift */,
+				C607D4B523ED952D00B704A5 /* TableViewController.swift */,
+				C690BD8B23E82BAF0036B7E6 /* ViewController.swift */,
 			);
 			path = "easy-browser";
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				C690BD8C23E82BAF0036B7E6 /* ViewController.swift in Sources */,
 				C690BD8823E82BAF0036B7E6 /* AppDelegate.swift in Sources */,
 				C690BD8A23E82BAF0036B7E6 /* SceneDelegate.swift in Sources */,
+				C607D4B623ED952D00B704A5 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

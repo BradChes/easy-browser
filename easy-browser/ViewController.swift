@@ -12,7 +12,8 @@ import WebKit
 class ViewController: UIViewController {
     var webView: WKWebView!
     var progressView: UIProgressView!
-    var websites = ["apple.com", "bbc.co.uk"]
+    var websites: [String]!
+    var selectedWebsite: String?
     
     override func loadView() {
         webView = WKWebView()
@@ -23,22 +24,26 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.largeTitleDisplayMode = .never
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openTapped))
         
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
+        let forward = UIBarButtonItem(title: "Forward", style: .plain, target: webView, action: #selector(webView.goForward))
+        let backward = UIBarButtonItem(title: "Backward", style: .plain, target: webView, action: #selector(webView.goBack))
         
         progressView = UIProgressView(progressViewStyle: .default)
         progressView.sizeToFit()
         let progressButton = UIBarButtonItem(customView: progressView)
         
-        toolbarItems = [progressButton, spacer, refresh]
+        toolbarItems = [progressButton, spacer, backward, refresh, forward]
         
         navigationController?.isToolbarHidden = false
         
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         
-        let url = URL(string: "https://" + websites[0])!
+        let url = URL(string: "https://" + selectedWebsite!)!
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true
     }
@@ -80,8 +85,15 @@ class ViewController: UIViewController {
                 }
             }
         }
+                
+        if (url?.host != nil) {
+            let ac = UIAlertController(title: "BLOCKED", message: "Access to this site is blocked.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Return", style: .cancel, handler: { _ in
+            }))
+            present(ac, animated: true)
+        }
         
-        decisionHandler(.cancel)
+       decisionHandler(.cancel)
     }
 }
 
