@@ -12,7 +12,7 @@ import WebKit
 class ViewController: UIViewController {
     var webView: WKWebView!
     var progressView: UIProgressView!
-    var websites = [String]()
+    var websites: [String]!
     var selectedWebsite: String?
     
     override func loadView() {
@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.largeTitleDisplayMode = .never
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openTapped))
         
@@ -83,8 +85,15 @@ class ViewController: UIViewController {
                 }
             }
         }
+                
+        if (url?.host != nil) {
+            let ac = UIAlertController(title: "BLOCKED", message: "Access to this site is blocked.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Return", style: .cancel, handler: { _ in
+            }))
+            present(ac, animated: true)
+        }
         
-        decisionHandler(.cancel)
+       decisionHandler(.cancel)
     }
 }
 
